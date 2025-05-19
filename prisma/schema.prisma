@@ -9,39 +9,13 @@ datasource db {
 }
 
 model Job {
-  id        String    @id
-  ownerId   String
-  position  String
-  company   String
-  location  String?
-  status    JobStatus
-  type      JobType
-  createdAt DateTime  @default(now())
-  updatedAt DateTime
-  User      User      @relation(fields: [ownerId], references: [id])
-}
-
-model User {
-  id        String   @id
-  name      String   @db.VarChar(50)
-  lastName  String?  @db.VarChar(50)
-  email     String   @unique @db.VarChar(255)
-  password  String   @db.VarChar(72)
-  location  String?  @db.VarChar(255)
+  id        String      @id @default(uuid())
+  clerkId   String
   createdAt DateTime @default(now())
-  updatedAt DateTime
-  Job       Job[]
-}
-
-enum JobStatus {
-  pending
-  interview
-  declined
-}
-
-enum JobType {
-  full_time
-  part_time
-  remote
-  internship
+  updatedAt DateTime @updatedAt
+  position    String
+  company   String
+  location  String
+  status      String
+  mode     String
 }
