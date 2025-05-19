@@ -44,3 +44,6 @@ next-env.d.ts
 instructions.md
 /instructions.md
 ./instructions.md
+
+# clerk configuration (can include secrets)
+/.clerk/
