@@ -8,6 +8,7 @@ import { Prisma } from "@prisma/client";
 
 async function authenticateAndRedirect(): Promise<string> {
   const { userId } = await auth();
+
   if (!userId) {
     redirect("/");
   }
