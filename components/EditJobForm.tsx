@@ -90,4 +90,5 @@ function EditJobForm({ jobId }: { jobId: string }) {
     </Form>
   );
 }
+
 export default EditJobForm;
